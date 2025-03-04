@@ -6,6 +6,7 @@ public class BalanceFormatter {
         System.out.print("Enter balance: ");
         int balance = scanner.nextInt();
         BalanceFormatter balanceFormatter = new BalanceFormatter();
+
         // Create an instance of BalanceHandler
         BalanceHandler balanceHandler = balanceFormatter.new BalanceHandler();
 
@@ -17,16 +18,12 @@ public class BalanceFormatter {
     class BalanceHandler {
         // Method to get formatted balance
         public String getFormattedBalance(int balance) {
-            Format formatter = new Format();
-            return formatter.formatBalance(balance);
+            return formatBalance(balance);
         }
 
-        // Nested non-static class for formatting
-        class Format {
-            // Method to format the balance
-            public String formatBalance(int balance) {
-                return String.format("%,d", balance);
-            }
+        // Function to format the balance (instead of the nested Format class)
+        public String formatBalance(int balance) {
+            return String.format("%,d", balance);
         }
     }
 }
