@@ -1,4 +1,5 @@
-import java.sql.SQLOutput;
+package Generics;
+
 import java.util.ArrayList;
 
 public class GenericsExample {
