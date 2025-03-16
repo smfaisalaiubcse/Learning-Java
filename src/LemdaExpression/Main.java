@@ -14,8 +14,13 @@ public class Main {
                 }
         };
         System.out.println(multiply.apply(20));
+
         //same thing with the help of lemda expression with shorter syntax
         Function<Integer, Integer> mul = (Integer num1) -> num1 * num1; //Apply function er body eita -- anonymous function
-        System.out.println(mul.apply(10));
+        Function<Integer, Integer> add = (Integer num1) -> num1 + 50;
+        mul.apply(10);
+        System.out.println("Output: " + mul.andThen(add).apply(10));
+
+        //Do it by bifunction hw
     }
 }
