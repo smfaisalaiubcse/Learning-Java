@@ -1,6 +1,10 @@
 package LemdaExpression;
 
+import java.util.ConcurrentModificationException;
+import java.util.Random;
+import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,5 +26,12 @@ public class Main {
         System.out.println("Output: " + mul.andThen(add).apply(10));
 
         //Do it by bifunction hw
+
+        Consumer<String> consumer = (String val) -> System.out.println(val);
+        consumer.accept("My message");
+
+        Supplier<Integer> supplier = () -> new Random().nextInt(100);
+        //baki gula pic phone e
+
     }
 }
