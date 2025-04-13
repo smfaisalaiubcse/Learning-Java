@@ -5,13 +5,11 @@ import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 import static java.time.temporal.TemporalAdjusters.lastDayOfYear;
 
-// Define enum for LeaveType
 enum LeaveType {
     SICK,
     VACATION
 }
 
-// Abstract class for common employee fields and method
 abstract class Employee {
     public String employee_type;
     public String employee_id;
@@ -22,7 +20,6 @@ abstract class Employee {
     abstract int calculateLeaveBalance(LocalDate joining_date, LeaveType type);
 }
 
-// Officer class implementation
 class Officer extends Employee {
     public String designation;
     public String department;
@@ -49,7 +46,6 @@ class Officer extends Employee {
     }
 }
 
-// Staff class implementation
 class Staff extends Employee {
     public String designation;
     public String department;
@@ -76,7 +72,6 @@ class Staff extends Employee {
     }
 }
 
-// Generic leave calculation handler
 class LeaveCalculation<T extends Employee> {
     public void process(T employee) {
         int sick = employee.calculateLeaveBalance(employee.joining_date, LeaveType.SICK);
@@ -90,7 +85,6 @@ class LeaveCalculation<T extends Employee> {
     }
 }
 
-// Main application
 public class LeaveCalculationSystem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
